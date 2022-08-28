@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const app = express();
 dotenv.config();
-const POST = process.env.POST || 3001;
+const POST = process.env.POST || 3000;
 
 const route = require('./routes/index.route');
 const db = require('./configs/db.config');
