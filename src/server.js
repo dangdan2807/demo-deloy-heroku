@@ -17,7 +17,8 @@ app.use(cors());
 // router init
 route(app);
 
-const POST = process.env.POST || 3000;
-app.listen(POST, () => {
-    console.log(`Server is running on http://localhost:${POST}`);
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
+app.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
 });
