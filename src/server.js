@@ -5,7 +5,6 @@ const cors = require("cors");
 
 const app = express();
 dotenv.config();
-const POST = process.env.POST || 3000;
 
 const route = require('./routes/index.route');
 const db = require('./configs/db.config');
@@ -18,6 +17,7 @@ app.use(cors());
 // router init
 route(app);
 
+const POST = process.env.POST || 3000;
 app.listen(POST, () => {
     console.log(`Server is running on http://localhost:${POST}`);
 });
